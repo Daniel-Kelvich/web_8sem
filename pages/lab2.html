@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторна робота №2</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h1>Лабораторна робота №2</h1>
+
+<table style="width:100%" class='lr_list'>
+  <tr>
+    <th><a href="index.html">ЛР № 1</a></th>
+    <th><a href="#">ЛР № 2</a></th>
+    <th><a href="#">ЛР № 3</a></th>
+    <th><a href="#">ЛР № 4</a></th>
+    <th><a href="#">ЛР № 5</a></th>
+    <th><a href="#">ЛР № 6</a></th>
+    <th><a href="#">ЛР № 7</a></th>
+    <th><a href="#">ЛР № 8</a></th>
+    <th><a href="#">ЛР № 9</a></th>
+  </tr>
+</table>
+
+
+<div class="left">
+  <table class="menu" style="width:100%">
+    <tr class="menuBtn" id="btn1">
+      <th >Постановка задачі ЛР2</th>
+    </tr>
+    <tr class="menuBtn" id="btn2">
+      <th>Середовище розробки</th>
+    </tr>
+    <tr class="menuBtn" id="btn3">
+      <th>Опис предметного середовища</th>
+    </tr>
+    <tr class="menuBtn" id="btn4">
+      <th>HTML код</th>
+    </tr>
+    <tr class="menuBtn" id="btn5">
+      <th>Висновки</th>
+    </tr>
+  </table>
+
+</div>
+    
+<div class="main">
+    <div class="content" style="display: block" id="myDIV1">MAIN</div>
+    <div class="content" id="myDIV2">MAIN2</div>
+    <div class="content" id="myDIV3">MAIN3</div>
+    <div class="content" id="myDIV4">MAIN4</div>
+    <div class="content" id="myDIV5">MAIN5</div>
+</div>
+ 
+    
+<script>
+var tr = document.getElementsByClassName("menu")[0].getElementsByTagName("th");
+
+for(var i = 0;i<tr.length;i++){
+    tr[i].addEventListener("click", myScript);
+}
+
+function myScript(event){
+    document.querySelectorAll(".content").forEach(e => e.style.display = 'none');
+    let btnId = event.path[1].id
+    console.log(`myDIV${btnId.charAt(3)}`);
+    var x = document.getElementById(`myDIV${btnId.charAt(3)}`);
+    x.style.display = 'block';
+        
+}
+</script>
+</body>
+</html>
