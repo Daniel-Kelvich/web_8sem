@@ -1,3 +1,7 @@
+body {
+  background-color: lightgoldenrodyellow;
+}
+
 table.lr_list, th, td {
   border: 1px solid black;
 }
